@@ -811,7 +811,7 @@ jobs:
           name: gadget-container-image-${{ matrix.os }}-${{ matrix.platform }}.tar
           path: ${{ github.workspace }}
       - name: Scan gadget ${{ matrix.os }} ${{ matrix.platform }} container image
-        uses: aquasecurity/trivy-action@b6643a29fecd7f34b3597bc6acb0a98b03d33ff8 # v0.33.1
+        uses: aquasecurity/trivy-action@c1824fd6edce30d7ab345a9989de00bbd46ef284 # v0.34.0
         with:
           input: gadget-container-image-${{ matrix.os }}-${{ matrix.platform }}.tar
           format: 'table'
@@ -1047,7 +1047,7 @@ jobs:
         # string for others.
         build-args: ${{ matrix.image.build-args || '' }}
     - name: Scan ${{ matrix.image.name }} image for CVEs
-      uses: aquasecurity/trivy-action@b6643a29fecd7f34b3597bc6acb0a98b03d33ff8 # v0.33.1
+      uses: aquasecurity/trivy-action@c1824fd6edce30d7ab345a9989de00bbd46ef284 # v0.34.0
       with:
         input: /tmp/${{ matrix.image.name }}
         format: 'table'
